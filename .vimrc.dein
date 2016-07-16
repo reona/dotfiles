@@ -1,39 +1,39 @@
-"dein Scripts-----------------------------
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible
 endif
 
 
-" Required:
-set runtimepath^=~/.vim/repos/github.com/Shougo/dein.vim
+" プラグインが実際にインストールされているディレクトリ
+let s:dein_dir = expand('~/.vim')
+" dein.vim 本体
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-" Required:
-call dein#begin(expand('~/.vim'))
+" dein.vim がなければ github からクローンしてくる
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
 
-" Let dein manage dein
-" Required:
-call dein#add('Shougo/dein.vim')
+" 設定開始
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+  let g:rc_dir   = expand('~/dotfiles')
+  let s:toml     = g:rc_dir . '/dein.toml'
 
-" Add or remove your plugins here:
-call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neosnippet-snippets')
+  " TOML を読み込み、キャッシュしておく
+  call dein#load_toml(s:toml)
 
-" colorsheme
-call dein#add('tomasr/molokai')
+  " 設定終了
+  call dein#end()
+  call dein#save_state()
+endif
 
-" You can specify revision/branch/tag.
-call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+if dein#check_install()
+  call dein#install()
+endif
 
-" Required:
-call dein#end()
-
-" Required:
+syntax enable
 filetype plugin indent on
-
-" If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
-
-"End dein Scripts-------------------------
-
+colorscheme wombat256mod
