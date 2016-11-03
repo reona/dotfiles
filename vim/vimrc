@@ -3,6 +3,6 @@ source ~/dotfiles/vim/vimrc.dein
 
 filetype plugin indent on
 syntax enable
-colorscheme wombat256mod
+colorscheme Tomorrow-Night-Eighties
 
 set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim

@@ -11,6 +11,9 @@ repo = "thinca/vim-quickrun"
 repo = "michalbachowski/vim-wombat256mod"
 
 [[plugins]]
+repo = 'chriskempson/vim-tomorrow-theme'
+
+[[plugins]]
 repo = "Shougo/vimshell"
 rev  = "3787e5"
 
