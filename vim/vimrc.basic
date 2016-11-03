@@ -1,0 +1,100 @@
+"==================
+" encodeing
+"==================
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,iso-2022-jp-3,iso-2022-jp,eucjp-ms
+scriptencoding utf-8
+
+"==================
+" 基本的な設定
+"==================
+
+" 256色対応にする
+set t_Co=256
+
+" コマンドライン補完を拡張モードにする
+set wildmenu
+
+" 改行コードの自動調整
+set fileformats=unix,dos,mac
+
+" バックスペースキーで削除できるものを想定
+" indent : 行頭の空白
+" eol    : 改行
+" start  : 挿入モード開始位置より手間の文字
+set backspace=indent,eol,start
+
+"==================
+" バックアップ関連
+"==================
+" ファイルのバックアップをとっておくか
+set backup
+
+" ファイルの上書き前にバックアップを作るか
+set writebackup
+set backupcopy=yes
+
+" バックアップディレクトリ
+set backupdir=~/dotfiles/vim/.backup
+
+" スワップファイルのディレクトリ
+set directory=~/dotfiles/vim/.swap
+
+"==================
+" 検索系
+"==================
+
+" 検索語句のハイライト
+set hlsearch
+" 検索文字列に大文字が含まれていたら区別して検索
+set smartcase
+" 検索文字列の大文字小文字を区別しない
+set ignorecase
+
+"==================
+" 表示系
+"==================
+" 行番号を表示
+set number
+" 編集している行をハイライトする
+set cursorline
+" 画面上でタブ文字が占める幅
+set tabstop=2
+" 自動インデントでずれる幅
+set shiftwidth=4
+" タブキーを入力した時にタブ文字の代わりに挿入されるホワイトスペースの量を設定
+set softtabstop=2
+" 改行時に前の行のインデントを継続する
+set autoindent
+" 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
+set smartindent
+" タブ文字を入力した際に自動でホワイトスペースに展開されるかどうかを設定
+set expandtab
+" カーソルが何行目の何列目に置かれているのか表示する
+set ruler
+" ウィンドウの幅より長い行は折り返され、次の行に続けて表示される
+set wrap
+" 不可視文字を表示
+set list
+" 括弧を入力した時に、対応する括弧にカーソルが飛ぶようになる
+set showmatch
+" ソースコードの折りたたみ
+" http://nanasi.jp/articles/howto/fold/fold-marker.html
+" ビュジュアルモードで選択後、zfで折りたたみマーカーを埋め込む
+" ビュジュアルモードで洗濯後、zdで折りたたみマーカーを除去
+set foldmethod=marker
+
+"==================
+" コピー系
+"==================
+
+set clipboard=unnamed,autoselect
+
+"==================
+" 検索関連
+"==================
+
+set mouse=a
+
+nnoremap <Space>c :CodeSniff<CR>
+

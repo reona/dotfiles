@@ -4,7 +4,7 @@ endif
 
 
 " プラグインが実際にインストールされているディレクトリ
-let s:dein_dir = expand('~/.vim')
+let s:dein_dir = expand('~/dotfiles/vim')
 " dein.vim 本体
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
@@ -17,23 +17,23 @@ if &runtimepath !~# '/dein.vim'
 endif
 
 " 設定開始
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-  let g:rc_dir   = expand('~/dotfiles')
-  let s:toml     = g:rc_dir . '/dein.toml'
-
-  " TOML を読み込み、キャッシュしておく
-  call dein#load_toml(s:toml)
-
-  " 設定終了
-  call dein#end()
-  call dein#save_state()
+" deinが見つからない場合は、処理を終了
+if !dein#load_state(s:dein_dir)
+  finish
 endif
+
+call dein#begin(s:dein_dir)
+
+" TOML を読み込み、キャッシュしておく
+call dein#load_toml('~/dotfiles/vim/dein.toml', {'lazy': 0})
+call dein#load_toml('~/dotfiles/vim/deinlazy.toml', {'lazy': 1})
+call dein#load_toml('~/dotfiles/vim/deinft.toml', {'lazy': 0})
+
+" 設定終了
+call dein#end()
+call dein#save_state()
 
 if dein#check_install()
   call dein#install()
 endif
 
-syntax enable
-filetype plugin indent on
-colorscheme wombat256mod

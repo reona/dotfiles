@@ -1,0 +1,39 @@
+hook_add = '''
+" markdown preview 
+" https://raw-hide.co.jp/drp/engineerblog/112
+au BufRead,BufNewFile *.md set filetype=markdown
+let g:previm_open_cmd = 'open -a Firefox'
+let g:vim_markdown_folding_disabled=1
+
+" phpcs
+let Vimphpcs_Standard='PSR2'
+
+" php
+" 文字列中のSQLをハイライト
+let php_sql_query = 1
+" Baselibメソッドのハイライト
+let php_baselib = 1
+" 文字列中のHTMLをハイライト
+let php_htmlInStrings       = 1
+" <? をハイライト除外にする
+let php_noShortTags         = 1
+" カッコが閉じていない場合にハイライト
+let php_parent_error_close  = 1
+
+" watchdog
+" help watchdog
+" php ファイルの場合シンタックスチェックを行う
+let g:watchdogs_check_BufWritePost_enables = {
+\ "php" : 1
+\}
+" 一定時間キー入力がない場合にシンタックスチェックを行う
+let g:watchdogs_check_CursorHold_enable = 1
+" シンタックスチェック後にquickfixを閉じる
+let g:quickrun_config = {
+\ "watchdogs_checker/_" : {
+\   "hook/close_quickfix/enable_exit" : 1,
+\ }
+\}
+call watchdogs#setup(g:quickrun_config)
+
+'''

@@ -1,0 +1,121 @@
+[[plugins]]
+repo = "Shougo/dein.vim"
+
+[[plugins]]
+repo = "Shougo/unite.vim"
+
+[[plugins]]
+repo = "thinca/vim-quickrun"
+
+[[plugins]]
+repo = "michalbachowski/vim-wombat256mod"
+
+[[plugins]]
+repo = "Shougo/vimshell"
+rev  = "3787e5"
+
+[[plugins]]
+repo = "slim-template/vim-slim"
+
+[[plugins]]
+repo = "nathanaelkane/vim-indent-guides"
+hook_add = '''
+" vim立ち上げた時に、自動的にvim-indent-guidesをオンにする
+let g:indent_guides_enable_on_vim_startup=1
+" ガイドをスタートするインデントの量
+let g:indent_guides_start_level=1
+" 自動カラーを無効にする
+let g:indent_guides_auto_colors=0
+" 奇数インデントのカラー
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=#262626 ctermbg=lightgray
+" 偶数インデントのカラー
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray
+" ハイライト色の文字の幅
+let g:indent_guides_color_change_percent = 30
+" ガイドの幅
+let g:indent_guides_guide_size = 2
+'''
+
+[[plugins]]
+repo = "othree/html5.vim"
+on_i = 1
+on_ft = ["html","ruby","eruby"]
+
+[[plugins]]
+repo = "hail2u/vim-css3-syntax.git"
+on_i = 1
+on_ft = "css"
+
+[[plugins]]
+repo = "mattn/emmet-vim"
+
+[[plugins]]
+repo = "ujihisa/unite-rake"
+
+[[plugins]]
+repo = "basyura/unite-rails"
+
+[[plugins]]
+repo = "tpope/vim-rails"
+
+[[plugins]]
+repo = "scrooloose/nerdtree"
+
+# markdown {{{
+[[plugins]]
+repo = "rcmdnk/vim-markdown"
+
+[[plugins]]
+repo = "kannokanno/previm"
+
+[[plugins]]
+repo = "tyru/open-browser.vim"
+
+[[plugins]]
+repo = "joker1007/vim-markdown-quote-syntax"
+# }}}
+
+
+# php {{{
+[[plugins]]
+repo = "bpearson/vim-phpcs"
+
+[[plugins]]
+repo = 'shawncplus/phpcomplete.vim'
+on_ft = 'php'
+
+[[plugins]]
+repo = 'evidens/vim-twig'
+on_ft = 'twig'
+# }}}
+
+# watchdog {{{
+[[plugins]]
+repo = 'Shougo/vimproc'
+
+[[plugins]]
+repo = 'osyo-manga/shabadou.vim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-watchdogs'
+
+[[plugins]]
+repo = 'jceb/vim-hier'
+
+# quickfixの該当箇所にカーソルを移動させるとエラー内容がコマンドウィンドウに出力される
+[[plugins]]
+repo = 'dannyob/quickfixstatus'
+# }}}
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'elzr/vim-json'
+on_ft = 'json'
+
+
+[[plugins]]
+repo = 'h1mesuke/vim-alignta'
+

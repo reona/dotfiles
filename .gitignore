@@ -1,0 +1,12 @@
+vim/.backup/
+vim/.swap/
+vim/.dein/
+vim/rollbacks/
+vim/temp/
+vim/repos/
+vim/tmp/
+vim/cache_vi
+vim/cache_vim
+vim/merged
+vim/state_vi.vim
+vim/state_vim.vim
